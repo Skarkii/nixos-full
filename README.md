@@ -15,9 +15,24 @@ home-manager switch
 ```
 
 # Issues that have occured:
-## error: ``file 'home-manager' was not found in the Nix search path (add it using $NIX_PATH or -I)``
-Solution:
+## error:
+```sh
+file 'home-manager' was not found in the Nix search path (add it using $NIX_PATH or -I)
 ```
-nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+Solution:
+Add the correct version of home-manager, i.e. 24.11:
+```
+nix-channel --add https://github.com/rycee/home-manager/archive/release-24.11.tar.gz home-manager
 nix-channel --update
 ```
+
+## error:
+Version mismatch
+```sh
+trace: warning: You are using
+
+  Home Manager version 23.05 and
+  Nixpkgs version 23.11.
+```
+Solution ensure ``nix-channel --list`` that home manager matches nix version, otherwise update, i.e. v24.11:
+``nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager``
