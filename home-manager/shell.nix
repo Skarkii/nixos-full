@@ -66,6 +66,9 @@
 
     shellAliases = {
       la = "ls -a";
+      vim = "nvim";
+      vi = "nvim";
+      dev = "nix develop";
     };
   };
 }

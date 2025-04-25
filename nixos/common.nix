@@ -91,7 +91,7 @@
     # gnomeExtensions.quick-settings-tweaker
 
     # Editor/Terminal
-    vim
+    neovim
     zed-editor
     zsh
 
