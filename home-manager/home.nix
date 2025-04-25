@@ -14,7 +14,10 @@
     enable = true;
     userName = "Skarkii";
     userEmail = "lucas@kuja-halkola.com";
-    ignores = [ "*~" "*.swp" ];
+    ignores = [
+      "*~"
+      "*.swp"
+    ];
     aliases = {
       # ci = "commit";
     };

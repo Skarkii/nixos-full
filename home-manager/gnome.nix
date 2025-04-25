@@ -21,15 +21,16 @@
         # quick-settings-tweaker.extensionUuid
       ];
       favorite-apps = [
-            "dev.zed.Zed.desktop"
-            "org.gnome.Console.desktop"
-            "mullvad-browser.desktop"
-            "discord.desktop"
-            "spotify.desktop"
-            "org.gnome.Nautilus.desktop"
-            # Add more .desktop files in your desired order
-        ];
+        "dev.zed.Zed.desktop"
+        "org.gnome.Console.desktop"
+        "mullvad-browser.desktop"
+        "discord.desktop"
+        "spotify.desktop"
+        "org.gnome.Nautilus.desktop"
+        # Add more .desktop files in your desired order
+      ];
     };
+
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
       color-scheme = "prefer-dark";
@@ -39,14 +40,14 @@
       # font-name = "Cantarell 11";
     };
     "org/gnome/desktop/background" = {
-          picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
-          picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
-          picture-options = "zoom";
-        };
-        "org/gnome/desktop/screensaver" = {
-          picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
-          picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
-          picture-options = "zoom";
-        };
+      picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+      picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+      picture-options = "zoom";
+    };
+    "org/gnome/desktop/screensaver" = {
+      picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+      picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+      picture-options = "zoom";
+    };
   };
 }

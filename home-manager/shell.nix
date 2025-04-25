@@ -1,4 +1,3 @@
-
 {
 
   programs.zsh = {
@@ -69,6 +68,7 @@
       vim = "nvim";
       vi = "nvim";
       dev = "nix develop";
+      gs = "git status";
     };
   };
 }
