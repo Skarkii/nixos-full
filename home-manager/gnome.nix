@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   # Enable dconf for GNOME settings
@@ -38,5 +38,15 @@
       # cursor-theme = "Adwaita";
       # font-name = "Cantarell 11";
     };
+    "org/gnome/desktop/background" = {
+          picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+          picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+          picture-options = "zoom";
+        };
+        "org/gnome/desktop/screensaver" = {
+          picture-uri = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+          picture-uri-dark = "file://${config.home.homeDirectory}/.config/home-manager/wallpapers/wallpaper.jpg";
+          picture-options = "zoom";
+        };
   };
 }
