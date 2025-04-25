@@ -14,6 +14,16 @@ sudo nixos-rebuild test
 home-manager switch
 ```
 
+## Search for missing dependecy
+```sh
+nix-locate "libgthread2-0.so.0"
+```
+
+## Update locate db
+```sh
+nix-index-update
+```
+
 # Issues that have occured:
 ## error:
 ```sh

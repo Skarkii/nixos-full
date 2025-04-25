@@ -10,7 +10,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -100,19 +99,38 @@
   #   ];
   # };
 
-  # Install firefox.
-  programs.firefox.enable = false;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  environment.variables = {
+    EDITOR = "vim";
+    BROWSER = "mullvad-browser";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
+
     # Nix editor utilties
     nixd
     nixfmt-rfc-style
+    nix-index
+
+    # Gnome utilities
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.clipboard-indicator
+    # gnomeExtensions.applications-menu # cant get these 3 to work
+    # gnomeExtensions.status-icons
+    # gnomeExtensions.places-status-indicator
+    # Outdated
+    # gnomeExtensions.sound-output-device-chooser
+    # gnomeExtensions.quick-settings-tweaker
 
     # Editor/Terminal
     vim
@@ -121,6 +139,16 @@
 
     # Terminal utilies
     git
+
+    # Compilers/Interpreters
+    gcc
+    python3
+    # python3Packages.pygame
+    go
+
+    # dependencies
+    glib
+    glibc
 
     # General
     mullvad-browser
