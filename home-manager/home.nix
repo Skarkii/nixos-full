@@ -12,7 +12,7 @@
 
   programs.git = {
     enable = true;
-    userName = "skarkii";
+    userName = "Skarkii";
     userEmail = "lucas@kuja.halkola.com";
   };
 
