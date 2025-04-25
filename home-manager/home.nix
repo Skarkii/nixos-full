@@ -13,7 +13,7 @@
   programs.git = {
     enable = true;
     userName = "Skarkii";
-    userEmail = "lucas@kuja.halkola.com";
+    userEmail = "lucas@kuja-halkola.com";
   };
 
   # You should not change this value, even if you update Home Manager. If you do
