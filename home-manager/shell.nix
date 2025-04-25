@@ -8,7 +8,10 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ]; # Add plugins you need
+      plugins = [
+        "git"
+        "z"
+      ]; # Add plugins you need
       theme = "robbyrussell"; # A modern, clean theme (you can change this)
     };
 
