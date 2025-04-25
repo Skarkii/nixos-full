@@ -5,6 +5,7 @@
     ./editor.nix
     ./shell.nix
     ./gnome.nix
+    ./ssh.nix
   ];
 
   home.username = "skarkii";

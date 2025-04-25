@@ -54,5 +54,6 @@
 
   environment.systemPackages = with pkgs; [
     lutris
+    plex
   ];
 }

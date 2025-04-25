@@ -68,10 +68,23 @@
 
     shellAliases = {
       la = "ls -a";
+
+      # dev tools
       vim = "nvim";
       vi = "nvim";
       dev = "nix develop";
       gs = "git status";
+      gc = "git commit -m --verbose";
+
+      # clipboard, usage: program | clip
+      clip = "wl-copy";
+      CLIP = "wl-copy";
+
+      # z alias
+      zl = "z -l";
+      za = "z --add";
+      zx = "z -x";
+      zd = "z -x";
     };
   };
 }

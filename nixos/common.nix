@@ -109,6 +109,9 @@
     mullvad-browser
     discord
     spotify
+    plex-desktop
+    neofetch
+    wl-clipboard
   ];
 
   # Set zsh to default terminal
