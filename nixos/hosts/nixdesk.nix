@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   networking.hostName = "nixdesk";
@@ -46,4 +51,8 @@
         "steam-run"
       ];
   };
+
+  environment.systemPackages = with pkgs; [
+    lutris
+  ];
 }
