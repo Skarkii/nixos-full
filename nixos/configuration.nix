@@ -140,16 +140,6 @@
     # Terminal utilies
     git
 
-    # Compilers/Interpreters
-    gcc
-    python3
-    # python3Packages.pygame
-    go
-
-    # dependencies
-    glib
-    glibc
-
     # General
     mullvad-browser
     discord
