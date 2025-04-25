@@ -14,6 +14,14 @@
     enable = true;
     userName = "Skarkii";
     userEmail = "lucas@kuja-halkola.com";
+    ignores = [ "*~" "*.swp" ];
+    aliases = {
+      # ci = "commit";
+    };
+    extraConfig = {
+      # init.defaultBranch = "master";
+      # pull.rebase = "false";
+    };
   };
 
   # You should not change this value, even if you update Home Manager. If you do

@@ -20,6 +20,15 @@
         # sound-output-device-chooser.extensionUuid
         # quick-settings-tweaker.extensionUuid
       ];
+      favorite-apps = [
+            "dev.zed.Zed.desktop"
+            "org.gnome.Console.desktop"
+            "mullvad-browser.desktop"
+            "discord.desktop"
+            "spotify.desktop"
+            "org.gnome.Nautilus.desktop"
+            # Add more .desktop files in your desired order
+        ];
     };
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
