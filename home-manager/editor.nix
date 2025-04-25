@@ -82,18 +82,23 @@
         "__pycache__"
       ];
 
+      format_on_save = "off";
+      formatter = "language_server";
+
       languages = {
         C = { };
         JSON = { };
         Python = { };
-        # Example on how to format:
-        # "Python": {
-        #   "format_on_save": {
-        #     "external": {
-        #       "command": "black",
-        #       "arguments": ["-", "--line-length", "999"]
-        #     }
-        #   }
+        Nix = {
+          format_on_save = "on";
+          language_servers = [ "nil" ];
+          formatter = {
+            language_server = {
+              name = "nil";
+              arguments = [ ];
+            };
+          };
+        };
       };
 
       lsp = {
