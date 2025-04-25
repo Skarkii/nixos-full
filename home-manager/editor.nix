@@ -86,30 +86,82 @@
       formatter = "language_server";
 
       languages = {
-        C = { };
-        JSON = { };
-        Python = { };
+        JavaScript = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "prettierd";
+              arguments = [
+                "--stdin-filepath"
+                "{buffer_path}"
+              ];
+            };
+          };
+        };
+        C = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "clang-format";
+              arguments = [ ];
+            };
+          };
+        };
+        "C++" = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "clang-format";
+              arguments = [ ];
+            };
+          };
+        };
+        Go = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "gofmt";
+              arguments = [ ];
+            };
+          };
+        };
+        Python = {
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "black";
+              arguments = [ "-" ];
+            };
+          };
+        };
         Nix = {
           format_on_save = "on";
           language_servers = [ "nil" ];
           formatter = {
-            language_server = {
-              name = "nil";
+            external = {
+              command = "nixfmt";
               arguments = [ ];
             };
           };
         };
       };
 
-      lsp = {
-        nil = {
-          settings = {
-            formatting = {
-              command = [ "nixfmt" ];
-            };
-          };
-        };
-      };
+      # lsp = {
+      #   black = {
+      #     settings = {
+      #       formatting = {
+      #         command = [ "black" ];
+      #       };
+      #     };
+      #   };
+      #   nil = {
+      #     settings = {
+      #       formatting = {
+      #         command = [ "nixfmt" ];
+      #       };
+      #     };
+      #   };
+      # };
 
       assistant = {
         default_model = {

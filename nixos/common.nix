@@ -95,8 +95,12 @@
     zed-editor
     zsh
 
-    # lsp
+    # lsp&formatters
     nil
+    black
+    gopls
+    clang-tools
+    prettierd
 
     # Terminal utilies
     git
