@@ -10,6 +10,12 @@
   home.username = "skarkii";
   home.homeDirectory = "/home/skarkii";
 
+  programs.git = {
+    enable = true;
+    userName = "skarkii";
+    userEmail = "lucas@kuja.halkola.com";
+  };
+
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
