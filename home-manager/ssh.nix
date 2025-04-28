@@ -9,6 +9,11 @@
         user = "lucas";
         port = 22;
       };
+      "github.com" = {
+        user = "git";
+        identityFile = "~/.ssh/git";
+
+      };
     };
   };
 }
