@@ -23,8 +23,8 @@
       vim_mode = true;
       theme = {
         mode = "system";
-        light = "Andromeda";
-        dark = "Andromeda";
+        light = "Gruvbox Dark";
+        dark = "Gruvbox Dark";
       };
       show_whitespaces = "boundary";
       relative_line_numbers = true;

@@ -4,9 +4,9 @@
   imports = [
     ./editor.nix
     ./shell.nix
-    ./gnome.nix
     ./ssh.nix
     ./browser.nix
+    ./hyprland.nix
   ];
 
   home.username = "skarkii";

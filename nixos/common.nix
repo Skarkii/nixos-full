@@ -31,15 +31,22 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Gnome
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.xkb = {
-    layout = "se";
-    variant = "";
+  # Wayland
+  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
+    xkb.layout = "se";
+    xkb.variant = "";
   };
-  console.keyMap = "sv-latin1";
+  services.xserver.excludePackages = [ ];
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    # nvidiaPatches = true;  # ???
+  };
 
   # Sound
   security.rtkit.enable = true;
@@ -80,17 +87,8 @@
     nixfmt-rfc-style
     nix-index
 
-    # Gnome utilities
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.clipboard-indicator
-    # gnomeExtensions.applications-menu # cant get these 3 to work
-    # gnomeExtensions.status-icons
-    # gnomeExtensions.places-status-indicator
-    # Outdated
-    # gnomeExtensions.sound-output-device-chooser
-    # gnomeExtensions.quick-settings-tweaker
-
     # Editor/Terminal
+    kitty
     neovim
     zed-editor
     zsh
@@ -105,14 +103,14 @@
 
     # Terminal utilies
     git
+    neofetch
+    wl-clipboard
 
     # General
     mullvad-browser
     discord
     spotify
     plex-desktop
-    neofetch
-    wl-clipboard
   ];
 
   # Set zsh to default terminal
@@ -121,10 +119,7 @@
 
   # remove trash programs
   environment.gnome.excludePackages = [
-    pkgs.gnome-tour
   ];
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  services.xserver.desktopManager.xterm.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
