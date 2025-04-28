@@ -24,6 +24,16 @@ nix-locate "libgthread2-0.so.0"
 nix-index-update
 ```
 
+## Change nixpkgs channel
+```sh
+➜  conf git:(master) ✗ sudo nix-channel --list
+    nixos https://nixos.org/channels/nixos-unstable
+    nixpkgs https://nixos.org/channels/nixpkgs-unstable
+
+➜  conf git:(master) ✗ nix-channel --list
+    home-manager https://github.com/nix-community/home-manager/archive/master.tar.gz
+```
+
 # Issues that have occured:
 ## error:
 ```sh

@@ -42,8 +42,8 @@
   console.keyMap = "sv-latin1";
 
   # Sound
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -94,6 +94,7 @@
     neovim
     zed-editor
     zsh
+    atuin
 
     # lsp&formatters
     nil

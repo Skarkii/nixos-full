@@ -1,4 +1,11 @@
 {
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      enable_accept = false;
+    };
+  };
 
   programs.zsh = {
     enable = true;
@@ -15,7 +22,7 @@
       theme = "robbyrussell"; # A modern, clean theme (you can change this)
     };
 
-    initExtra = ''
+    initContent = ''
       cmkdir() {
         mkdir -p "$1" && cd "$1"
       }
@@ -74,7 +81,12 @@
       vi = "nvim";
       dev = "nix develop";
       gs = "git status";
-      gc = "git commit -m --verbose";
+      gc = "git commit --verbose -m";
+
+      # Nix/Homemanager
+      nix-rebuild = "sudo nixos-rebuild switch";
+      hm-rebuild = "home-manager switch";
+      hm-clean = "nix-collect-garbage"; # -d ?
 
       # clipboard, usage: program | clip
       clip = "wl-copy";

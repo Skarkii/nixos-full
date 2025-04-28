@@ -6,6 +6,7 @@
     ./shell.nix
     ./gnome.nix
     ./ssh.nix
+    ./browser.nix
   ];
 
   home.username = "skarkii";
@@ -52,4 +53,6 @@
   };
 
   programs.home-manager.enable = true;
+  programs.home-manager.path = "$HOME/dev/home-manager";
+  # programs.home-manager.path = "$HOME/.nix-profile/bin/home-manager";
 }
