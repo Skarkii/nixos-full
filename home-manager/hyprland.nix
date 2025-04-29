@@ -116,6 +116,21 @@
           vibrancy = 0.1696;
         };
       };
+      bindl = [
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", Print, exec, hyprshot -m window"
+      ];
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
       animations = {
         enabled = "yes, please :)";
         bezier = [
@@ -184,20 +199,6 @@
 # windowrule = rounding 0, floating:0, onworkspace:w[tv1]
 # windowrule = bordersize 0, floating:0, onworkspace:f[1]
 # windowrule = rounding 0, floating:0, onworkspace:f[1]
-
-# Laptop multimedia keys for volume and LCD brightness
-# bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
-# bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-# bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-# bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-# bindel = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+
-# bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 10%-
-
-# Requires playerctl
-# bindl = , XF86AudioNext, exec, playerctl next
-# bindl = , XF86AudioPause, exec, playerctl play-pause
-# bindl = , XF86AudioPlay, exec, playerctl play-pause
-# bindl = , XF86AudioPrev, exec, playerctl previous
 
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules

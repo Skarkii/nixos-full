@@ -104,12 +104,12 @@
 
     # hyprland
     kdePackages.dolphin
-    # wofi # rofi-wayland?
     rofi-wayland
     mako
     waybar
-    # pamixer # audio control
-    # brightnessctl # brightness control
+    playerctl
+    brightnessctl
+    hyprshot
 
     # Terminal utilies
     git
