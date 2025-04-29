@@ -32,15 +32,16 @@
   };
 
   # Wayland
-  # services.xserver.desktopManager.gnome.enable = true;
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
     xkb.layout = "se";
     xkb.variant = "";
+    excludePackages = [
+      pkgs.xterm
+    ];
   };
-  services.xserver.excludePackages = [ ];
 
   programs.hyprland = {
     enable = true;
@@ -101,6 +102,15 @@
     clang-tools
     prettierd
 
+    # hyprland
+    kdePackages.dolphin
+    # wofi # rofi-wayland?
+    rofi-wayland
+    mako
+    waybar
+    # pamixer # audio control
+    # brightnessctl # brightness control
+
     # Terminal utilies
     git
     neofetch
@@ -116,10 +126,6 @@
   # Set zsh to default terminal
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-
-  # remove trash programs
-  environment.gnome.excludePackages = [
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
