@@ -1,3 +1,6 @@
+# NOTE
+This branch is used to store how a gnome setup would look like. It will not be used.
+
 # Commands
 ## Rebuild Nix-OS
 Switch:
