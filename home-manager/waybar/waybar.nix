@@ -8,9 +8,9 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = builtins.readFile ./waybar/style.js;
+    style = builtins.readFile ./style.js;
     settings = {
-      mainBar = builtins.fromJSON (builtins.readFile ./waybar/config.jsonc);
+      mainBar = builtins.fromJSON (builtins.readFile ./config.jsonc);
     };
   };
 }
