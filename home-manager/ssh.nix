@@ -12,7 +12,6 @@
       "github.com" = {
         user = "git";
         identityFile = "~/.ssh/git";
-
       };
     };
   };

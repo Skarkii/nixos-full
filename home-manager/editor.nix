@@ -86,6 +86,9 @@
       formatter = "language_server";
 
       languages = {
+        json = {
+          format_on_save = "off";
+        };
         JavaScript = {
           format_on_save = "on";
           formatter = {

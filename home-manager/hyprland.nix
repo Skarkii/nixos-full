@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./waybar.nix
+    ./waybar/waybar.nix
     ./mako.nix
   ];
 
@@ -22,10 +22,15 @@
           natural_scroll = true;
         };
       };
+      "$mainMod" = "SUPER";
+
+      # Useful for easy swap upon chaning software
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun";
-      "$mainMod" = "SUPER";
+      "$editor" = "zeditor";
+      "$browser" = "librewolf";
+
       bind = [
         "$mainMod, T, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
@@ -80,8 +85,8 @@
         sensitivity = -0.5;
       };
       general = {
-        gaps_in = 5;
-        gaps_out = 20;
+        gaps_in = 2;
+        gaps_out = 5;
 
         border_size = 2;
 
@@ -170,8 +175,12 @@
         preserve_split = true; # You probably want this
       };
       exec-once = [
+        "[workspace 1 silent] $terminal"
+        "[workspace 2 silent] $editor"
+        "[workspace 3 silent] $browser"
+        "[workspace 4 silent] spotify"
+        "[workspace 4 silent] discord"
         # autostart
-
       ];
       misc = {
         force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers

@@ -117,7 +117,8 @@
     wl-clipboard
 
     # General
-    mullvad-browser
+    # mullvad-browser
+    librewolf
     discord
     spotify
     plex-desktop

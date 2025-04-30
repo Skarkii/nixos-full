@@ -3,6 +3,12 @@
   services.mako = {
     enable = true;
 
+    # Suppress Spotify notifications
+    extraConfig = ''
+      [app-name=Spotify]
+      invisible=1
+    '';
+
     maxVisible = 5;
     maxHistory = 5;
     sort = "-time";
