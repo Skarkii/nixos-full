@@ -1,8 +1,27 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./waybar/waybar.nix
     ./mako.nix
+  ];
+
+  # Packages used with hyprland
+  home.packages = with pkgs; [
+    kdePackages.dolphin # $fileManager
+    rofi-wayland # $menu
+
+    # Notifications
+    mako
+
+    # Panel
+    waybar
+
+    # Controls for waybar and keyboard shortcuts
+    playerctl
+    brightnessctl
+
+    # Print screen
+    hyprshot
   ];
 
   programs.kitty.enable = true;
@@ -32,19 +51,19 @@
       "$browser" = "librewolf";
 
       bind = [
-        "$mainMod, T, exec, $terminal"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, R, exec, $menu"
         "$mainMod, Q, exec, $terminal"
+
         "$mainMod, C, killactive,"
-        "$mainMod, R, exec, $menu"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, P, pseudo, "
-        "$mainMod, J, togglesplit,"
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        # "$mainMod, J, togglesplit," # Horizontal / Vertical
+
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
+
+        # Workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -65,14 +84,19 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+
+        # Mouse move
+        # "$mainMod, mouse_down, workspace, e+1"
+        # "$mainMod, mouse_up, workspace, e-1"
+
+        # "$mainMod, V, togglefloating,"
+        # "$mainMod, P, pseudo, "
+        # "$mainMod, S, togglespecialworkspace, magic"
+        # "$mainMod SHIFT, S, movetoworkspace, special:magic"
       ];
       bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
       ];
       gestures = {
         workspace_swipe = false;
@@ -81,8 +105,6 @@
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
       device = {
-        name = "epic-mouse-v1";
-        sensitivity = -0.5;
       };
       general = {
         gaps_in = 2;

@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  # Fonts needed
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    pavucontrol
   ];
 
   programs.waybar = {

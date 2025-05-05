@@ -31,6 +31,8 @@
       show_edit_predictions = false;
       remove_trailing_whitespace_on_save = true;
       base_keymap = "VSCode";
+      ui_font_family = "JetBrains Mono";
+      buffer_font_family = "JetBrains Mono";
       ui_font_size = 16;
       buffer_font_size = 16;
       load_direnv = "shell_hook";

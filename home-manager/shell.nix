@@ -1,11 +1,10 @@
+{ pkgs, ... }:
 {
-  programs.atuin = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      enable_accept = false;
-    };
-  };
+  # Things used within the shell
+  home.packages = with pkgs; [
+    neofetch
+    wl-clipboard
+  ];
 
   programs.zsh = {
     enable = true;

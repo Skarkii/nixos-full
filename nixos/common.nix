@@ -89,11 +89,8 @@
     nix-index
 
     # Editor/Terminal
-    kitty
     neovim
-    zed-editor
     zsh
-    atuin
 
     # lsp&formatters
     nil
@@ -102,19 +99,11 @@
     clang-tools
     prettierd
 
-    # hyprland
-    kdePackages.dolphin
-    rofi-wayland
-    mako
-    waybar
-    playerctl
-    brightnessctl
-    hyprshot
+    # default hyprland modules, enough to configure it with HM
+    kitty
 
     # Terminal utilies
     git
-    neofetch
-    wl-clipboard
 
     # General
     # mullvad-browser
@@ -127,6 +116,7 @@
   # Set zsh to default terminal
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

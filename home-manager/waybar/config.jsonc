@@ -5,13 +5,13 @@
     "modules-left": [
         "hyprland/workspaces",
         "mpris",
-        "gamemode",
-        "privacy"
+        "gamemode"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
+      "privacy",
         "tray",
         "cpu",
         "memory",
@@ -23,15 +23,8 @@
         "format": "<span size='small' font='normal Font Awesome 6 Free'>{icon}</span>",
         "on-click": "activate",
         "sort-by-number": true,
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5"
-        }
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "mpris": {
         "format": "{player_icon}  {title} - {artist}",
@@ -39,8 +32,8 @@
         "max-length": 50,
         "dynamic-len": 10,
         "player": "spotify",
-        "on-scroll-up": "playerctl --player=spotify volume 0.05+",
-        "on-scroll-down": "playerctl --player=spotify volume 0.05-",
+        "on-scroll-up": "playerctl --player=spotify volume 0.05-",
+        "on-scroll-down": "playerctl --player=spotify volume 0.05+",
         "player-icons": {
             "default": "󰎈",
             "mpv": "",
@@ -85,7 +78,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": " {:%d.%m.%Y | %H:%M}  ",
+        "format": " {:%d.%m | %H:%M}  ",
         "tooltip": false,
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
@@ -95,7 +88,7 @@
     },
     "cpu": {
         "interval": 30,
-        "format": " {load}%",
+        "format": "\uf2db {load}%",
         "max-length": 10
     },
     "memory": {
@@ -115,21 +108,21 @@
     },
     "battery": {
       "states": {
-                  "warning" : 30,
-                  "critical" : 15
-                },
-                "format" : "{capacity}% {icon}",
-                "format-full" : "{capacity}% {icon}",
-                "format-charging" : "{capacity}% ",
-                "format-plugged" : "{capacity}% ",
-                "format-alt" : "{time} {icon}",
-                "format-icons" : [
-                  "",
-                  "",
-                  "",
-                  "",
-                  ""
-                ]
+          "warning" : 30,
+          "critical" : 15
+          },
+          "format" : "{capacity}% {icon}",
+          "format-full" : "{capacity}% {icon}",
+          "format-charging" : "{capacity}% \udb80\udc84",
+          "format-plugged" : "{capacity}% ",
+          "format-alt" : "{time} {icon}",
+          "format-icons" : [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
     },
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
@@ -148,7 +141,7 @@
             ]
         },
         "scroll-step": 5,
-        "on-click": "pavucontrol",
+        "on-click": "pavucontrol -t 4",
         "ignored-sinks": [
             "Easy Effects Sink"
         ],
