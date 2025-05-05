@@ -22,6 +22,8 @@
 
     # Print screen
     hyprshot
+
+    xdg-desktop-portal-hyprland
   ];
 
   programs.kitty.enable = true;
@@ -49,6 +51,7 @@
       "$menu" = "rofi -show drun";
       "$editor" = "zeditor";
       "$browser" = "librewolf";
+      "$printScrn" = "hyprshot -m window";
 
       bind = [
         "$mainMod, E, exec, $fileManager"
@@ -148,7 +151,7 @@
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
-        ", Print, exec, hyprshot -m window"
+        ", Print, exec, $printScrn"
       ];
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
