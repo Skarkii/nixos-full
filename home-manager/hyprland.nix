@@ -22,8 +22,6 @@
 
     # Print screen
     hyprshot
-
-    xdg-desktop-portal-hyprland
   ];
 
   programs.kitty.enable = true;

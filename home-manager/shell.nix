@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./kitty.nix
+  ];
   # Things used within the shell
   home.packages = with pkgs; [
     neofetch
