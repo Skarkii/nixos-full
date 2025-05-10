@@ -88,10 +88,6 @@
     nixfmt-rfc-style
     nix-index
 
-    # Editor/Terminal
-    neovim
-    zsh
-
     # lsp&formatters
     nil
     black
@@ -99,10 +95,9 @@
     clang-tools
     prettierd
 
-    # default hyprland modules, enough to configure it with HM
+    # Needed to setup HM
     kitty
-
-    # Terminal utilies
+    zsh
     git
 
     # General
