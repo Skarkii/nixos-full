@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }:
-
 {
   imports = [
     # Include the results of the hardware scan.
@@ -11,24 +10,29 @@
   ];
 
   # Boot loader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
   # Networking
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Stockholm";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sv_SE.UTF-8";
-    LC_IDENTIFICATION = "sv_SE.UTF-8";
-    LC_MEASUREMENT = "sv_SE.UTF-8";
-    LC_MONETARY = "sv_SE.UTF-8";
-    LC_NAME = "sv_SE.UTF-8";
-    LC_NUMERIC = "sv_SE.UTF-8";
-    LC_PAPER = "sv_SE.UTF-8";
-    LC_TELEPHONE = "sv_SE.UTF-8";
-    LC_TIME = "sv_SE.UTF-8";
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "sv_SE.UTF-8";
+      LC_IDENTIFICATION = "sv_SE.UTF-8";
+      LC_MEASUREMENT = "sv_SE.UTF-8";
+      LC_MONETARY = "sv_SE.UTF-8";
+      LC_NAME = "sv_SE.UTF-8";
+      LC_NUMERIC = "sv_SE.UTF-8";
+      LC_PAPER = "sv_SE.UTF-8";
+      LC_TELEPHONE = "sv_SE.UTF-8";
+      LC_TIME = "sv_SE.UTF-8";
+    };
   };
 
   # Wayland
@@ -46,7 +50,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # nvidiaPatches = true;  # ???
   };
 
   # Sound
@@ -82,30 +85,6 @@
   # Packages
   environment.systemPackages = with pkgs; [
     home-manager
-
-    # Nix editor utilties
-    nixd
-    nixfmt-rfc-style
-    nix-index
-
-    # lsp&formatters
-    nil
-    black
-    gopls
-    clang-tools
-    prettierd
-
-    # Needed to setup HM
-    kitty
-    zsh
-    git
-
-    # General
-    # mullvad-browser
-    librewolf
-    discord
-    spotify
-    plex-desktop
   ];
 
   # Set zsh to default terminal

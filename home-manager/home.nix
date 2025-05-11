@@ -1,41 +1,66 @@
-{ ... }:
-
+{ pkgs, ... }:
 {
   imports = [
     ./editor.nix
-    ./shell.nix
+    ./kitty.nix
     ./ssh.nix
     ./browser.nix
     ./hyprland.nix
+    ./git.nix
+    ./zsh.nix
+    ./neovim.nix
+    ./waybar/waybar.nix
+    ./mako.nix
+  ];
+
+  home.packages = with pkgs; [
+    # Nix editor utilties
+    nixd
+    nixfmt-rfc-style
+    nix-index
+
+    # lsp&formatters
+    nil
+    black
+    gopls
+    clang-tools
+    prettierd
+
+    # General
+    # mullvad-browser
+    discord
+    spotify
+    plex-desktop
+    neofetch
+    wl-clipboard
+    waybar-mpris
+
+    kdePackages.dolphin # $fileManager
+    rofi-wayland # $menu
+
+    # Notifications
+    mako
+
+    # Panel
+    waybar
+
+    # Controls for waybar and keyboard shortcuts
+    playerctl
+    brightnessctl
+
+    # Print screen
+    hyprshot
   ];
 
   home.username = "skarkii";
   home.homeDirectory = "/home/skarkii";
 
-  programs.git = {
-    enable = true;
-    userName = "Skarkii";
-    userEmail = "lucas@kuja-halkola.com";
-    ignores = [
-      "*~"
-      "*.swp"
-    ];
-    aliases = {
-      # ci = "commit";
-    };
-    extraConfig = {
-      # init.defaultBranch = "master";
-      # pull.rebase = "false";
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
-
-  home.packages = [
-  ];
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -53,6 +78,5 @@
   };
 
   programs.home-manager.enable = true;
-  programs.home-manager.path = "$HOME/dev/home-manager";
   # programs.home-manager.path = "$HOME/.nix-profile/bin/home-manager";
 }

@@ -1,10 +1,8 @@
 { ... }:
-
 {
   # Enable and configure LibreWolf
-  #"ui.systemUsesDarkTheme" = 1;
   programs.librewolf = {
-    enable = false;
+    enable = true;
     profiles = {
       profile = {
         settings = {

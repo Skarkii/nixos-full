@@ -4,36 +4,39 @@
     enable = true;
 
     # Suppress Spotify notifications
-    extraConfig = ''
-      [app-name=Spotify]
-      invisible=1
-    '';
+    criteria = {
+      "app-name=Spotify" = {
+        invisible = true;
+      };
+    };
 
-    maxVisible = 5;
-    maxHistory = 5;
-    sort = "-time";
+    settings = {
+      max-visible = 4;
+      max-history = 5;
+      sort = "-time";
 
-    layer = "top";
-    anchor = "top-right";
+      layer = "top";
+      anchor = "top-right";
 
-    font = "monospace 10";
-    backgroundColor = "#285577FF";
-    textColor = "#FFFFFFFF";
-    width = 300;
-    height = 100;
-    margin = "10";
-    padding = "5";
-    borderSize = 1;
-    borderColor = "#4C7899FF";
-    borderRadius = 0;
-    progressColor = "over #5588AAFF";
-    icons = true;
-    maxIconSize = 64;
+      font = "monospace 10";
+      background-color = "#285577FF";
+      text-color = "#FFFFFFFF";
+      width = 300;
+      height = 100;
+      margin = "10";
+      padding = "5";
+      border-size = 1;
+      border-color = "#4C7899FF";
+      border-radius = 0;
+      progress-color = "over #5588AAFF";
+      icons = true;
+      max-icon-size = 64;
 
-    markup = true;
-    actions = true;
-    format = "<b>%s</b>\\n%b";
-    defaultTimeout = 0;
-    ignoreTimeout = false;
+      markup = true;
+      actions = true;
+      format = "<b>%s</b>\\n%b";
+      default-timeout = 0;
+      ignore-timeout = false;
+    };
   };
 }

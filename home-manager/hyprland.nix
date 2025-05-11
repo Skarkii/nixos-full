@@ -1,30 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  imports = [
-    ./waybar/waybar.nix
-    ./mako.nix
-  ];
-
-  # Packages used with hyprland
-  home.packages = with pkgs; [
-    kdePackages.dolphin # $fileManager
-    rofi-wayland # $menu
-
-    # Notifications
-    mako
-
-    # Panel
-    waybar
-
-    # Controls for waybar and keyboard shortcuts
-    playerctl
-    brightnessctl
-
-    # Print screen
-    hyprshot
-  ];
-
-  programs.kitty.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

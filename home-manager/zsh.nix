@@ -31,6 +31,7 @@
 
     shellAliases = {
       la = "ls -a";
+      logout = "hyprctl dispatch exit";
 
       dev = "nix develop";
       gs = "git status";

@@ -1,10 +1,5 @@
 { ... }:
-
 {
   networking.hostName = "nixtop";
-
-  services.printing.enable = true;
-
-  environment.systemPackages = [
-  ];
+  services.printing.enable = false;
 }
