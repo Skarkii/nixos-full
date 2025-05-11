@@ -27,7 +27,6 @@
     prettierd
 
     # General
-    # mullvad-browser
     discord
     spotify
     plex-desktop
@@ -37,12 +36,6 @@
 
     kdePackages.dolphin # $fileManager
     rofi-wayland # $menu
-
-    # Notifications
-    mako
-
-    # Panel
-    waybar
 
     # Controls for waybar and keyboard shortcuts
     playerctl
