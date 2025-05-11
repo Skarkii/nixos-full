@@ -87,7 +87,8 @@
       formatter = "language_server";
 
       languages = {
-        json = {
+        JSON = {
+          language_servers = [ ];
           format_on_save = "off";
         };
         JavaScript = {
