@@ -43,6 +43,8 @@
 
     # Print screen
     hyprshot
+    btop
+    dig # nslookup
   ];
 
   home.username = "skarkii";

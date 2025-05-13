@@ -33,7 +33,7 @@
       la = "ls -a";
       logout = "hyprctl dispatch exit";
 
-      dev = "nix develop";
+      dev = "nix develop -c $SHELL";
       gs = "git status";
       gc = "git commit --verbose -m";
 
