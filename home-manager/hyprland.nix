@@ -3,7 +3,8 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,auto";
+      monitor = ",preferred,auto,1.5";
+      #           res,     , ?  , scale
       input = {
         kb_layout = "se";
         kb_variant = "";
