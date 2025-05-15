@@ -6,11 +6,34 @@
 }:
 
 {
+
   networking.hostName = "nixdesk";
+
+  imports = [
+    # Include the results of the hardware scan.
+    ./plex.nix
+  ];
+
+  services.printing.enable = false;
+
+  environment.systemPackages = with pkgs; [
+      steam
+      steam-unwrapped
+      steam-run
+      lutris
+      protonplus
+      ntfs3g
+      ldmtool
+  ];
 
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
+  };
+  fileSystems."/mnt/hdd" = {
+      device = "/dev/disk/by-uuid/9846E04246E022AC";
+      fsType = "ntfs-3g";
+      options = [ "defaults" "noatime" "nofail" ];
   };
 
   fileSystems."/mnt/m2" = {
@@ -58,12 +81,4 @@
     #   ];
   };
   #
-  environment.systemPackages = with pkgs; [
-      steam
-      steam-unwrapped
-      steam-run
-      lutris
-      protonplus
-#   plex
-  ];
 }

@@ -11,6 +11,7 @@
     ./neovim.nix
     ./waybar/waybar.nix
     ./mako.nix
+    ./rofi.nix
   ];
 
   home.packages = with pkgs; [
@@ -35,7 +36,6 @@
     waybar-mpris
 
     kdePackages.dolphin # $fileManager
-    rofi-wayland # $menu
 
     # Controls for waybar and keyboard shortcuts
     playerctl
