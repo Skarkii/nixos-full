@@ -29,6 +29,8 @@
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
   };
   fileSystems."/mnt/hdd" = {
       device = "/dev/disk/by-uuid/9846E04246E022AC";

@@ -40,12 +40,12 @@
     # Controls for waybar and keyboard shortcuts
     playerctl
     brightnessctl
-
     # Print screen
     hyprshot
     btop
     dig # nslookup
   ];
+
 
   home.username = "skarkii";
   home.homeDirectory = "/home/skarkii";
