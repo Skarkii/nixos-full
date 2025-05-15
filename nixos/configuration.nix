@@ -1,6 +1,6 @@
 # configuration.nix
 let
-  hostName = "nixtop";
+  hostName = "nixdesk";
 in
 {
   imports = [

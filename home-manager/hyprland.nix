@@ -3,7 +3,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,1.5";
+    monitor = [
+        "DP-3,1920x1080@144,0x0,auto"
+        "HDMI-A-1,1920x1080,+1920x0,auto"
+        "DVI-D-1,1920x1080,-1920x0,auto"
+        ];
+
+      # monitor = ",preferred,auto,auto";
       #           res,     , ?  , scale
       input = {
         kb_layout = "se";

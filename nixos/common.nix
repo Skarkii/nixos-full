@@ -16,7 +16,7 @@
   };
 
   # Networking
-  networking.networkmanager.enable = true;
+ # networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Stockholm";
 
@@ -52,9 +52,10 @@
     xwayland.enable = true;
   };
 
+
   # Sound
   security.rtkit.enable = true;
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -85,6 +86,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     home-manager
+        # gtk3
   ];
 
   # Set zsh to default terminal

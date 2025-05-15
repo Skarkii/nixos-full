@@ -12,6 +12,16 @@
   hardware.graphics = {
     enable = true;
   };
+
+  fileSystems."/mnt/m2" = {
+      device = "/dev/disk/by-uuid/9C52B88A52B86AA2";
+      fsType = "ntfs";
+      options = [ "defaults" "noatime" "nofail" ];
+  };
+
+  # fileSystems."mnt/hdd"= {
+  # }
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
@@ -42,18 +52,18 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 
-    nixpkgs.config.allowUnfreePredicate =
-      pkg:
-      builtins.elem (lib.getName pkg) [
-        "steam"
-        "steam-original"
-        "steam-unwrapped"
-        "steam-run"
-      ];
+    # nixpkgs.config.allowUnfreePredicate =
+    #   pkg:
+    #   builtins.elem (lib.getName pkg) [
+    #   ];
   };
-
+  #
   environment.systemPackages = with pkgs; [
-    lutris
-    plex
+      steam
+      steam-unwrapped
+      steam-run
+      lutris
+      protonplus
+#   plex
   ];
 }
