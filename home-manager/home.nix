@@ -28,7 +28,7 @@
     prettierd
 
     # General
-    discord
+    vesktop
     spotify
     plex-desktop
     neofetch

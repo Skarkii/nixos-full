@@ -29,9 +29,18 @@
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
+
+  systemd.services.ldmtool = {
+      description = "LDM Tool Auto-Scan and Create";
+      wantedBy = [ "multi-user.target" ];
+      before = [ "local-fs.target" ];
+      script = ''
+            /run/current-system/sw/bin/ldmtool scan /dev/sda
+            /run/current-system/sw/bin/ldmtool create all
+      '';
+  };
+
   fileSystems."/mnt/hdd" = {
       device = "/dev/disk/by-uuid/9846E04246E022AC";
       fsType = "ntfs-3g";
@@ -68,7 +77,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   programs.steam = {

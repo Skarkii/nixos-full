@@ -4,9 +4,10 @@
     enable = true;
     settings = {
     monitor = [
-        "DP-3,1920x1080@144,0x0,auto"
-        "HDMI-A-1,1920x1080,+1920x0,auto"
-        "DVI-D-1,1920x1080,-1920x0,auto"
+      "DP-1,preferred,auto,auto"
+      "DP-2,preferred,auto,auto,transform,1"
+      "DP-3,preferred,-1080x0,auto,transform,1"
+      ",preferred,auto,auto"
         ];
 
       # monitor = ",preferred,auto,auto";
