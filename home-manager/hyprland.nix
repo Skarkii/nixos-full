@@ -181,11 +181,6 @@
         preserve_split = true; # You probably want this
       };
       exec-once = [
-        "[workspace 1 silent] $terminal"
-        "[workspace 2 silent] $editor"
-        "[workspace 3 silent] $browser"
-        "[workspace 4 silent] spotify"
-        "[workspace 4 silent] discord"
         # autostart
       ];
       misc = {
