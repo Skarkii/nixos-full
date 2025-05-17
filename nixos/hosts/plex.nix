@@ -46,7 +46,7 @@ in
         mediaPath
       ];
       ReadWritePaths = [
-        "var/lib/plex"
+        "/var/lib/plex"
       ];
       # Drop unnecessary privileges
       #   CapabilityBoundingSet = "";

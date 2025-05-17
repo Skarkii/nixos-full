@@ -87,6 +87,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     home-manager
+    gnome-session
         # gtk3
   ];
 

@@ -20,6 +20,7 @@
       steam
       steam-unwrapped
       steam-run
+      filezilla
       lutris
       protonplus
       ntfs3g
@@ -44,17 +45,15 @@
   fileSystems."/mnt/hdd" = {
       device = "/dev/disk/by-uuid/9846E04246E022AC";
       fsType = "ntfs-3g";
-      options = [ "defaults" "noatime" "nofail" ];
+      options = [ "uid=1000" "gid=1000" "rw" "user" "exec" "umask=000" "noatime" "nofail" ];
   };
 
   fileSystems."/mnt/m2" = {
       device = "/dev/disk/by-uuid/9C52B88A52B86AA2";
-      fsType = "ntfs";
-      options = [ "defaults" "noatime" "nofail" ];
+      fsType = "ntfs-3g";
+      options = [ "uid=1000" "gid=1000" "rw" "user" "exec" "umask=000" "noatime" "nofail" ];
   };
 
-  # fileSystems."mnt/hdd"= {
-  # }
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
